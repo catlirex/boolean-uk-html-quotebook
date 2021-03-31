@@ -1,27 +1,32 @@
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: "Cabin", sans-serif;
 }
 
 /* BODY GRID */
 body {
   display: grid;
-  grid-template-rows: auto 1fr 150px;
+  grid-template-rows: auto 1fr 100px;
 
   height: 100vh;
+  overflow: scroll;
+  grid-gap: 20px;
 }
 
 /* HEADER GRID */
-header {
+header.title {
   display: grid;
-  border: 1px dotted gray;
   grid-template:
     "logo . " auto
     "nav-bar nav-bar" 50px/
-    50px 1fr;
-  padding: 5px;
+    1fr 7fr;
   grid-gap: 10px;
-  background-color: #472836;
+
+  padding: 5px 20px;
+  place-items: center;
+  background-color: #000000;
+
   color: white;
 }
 
@@ -31,6 +36,7 @@ header {
 
   display: grid;
   border-radius: 50%;
+  margin-left: auto;
 }
 
 header h1 {
@@ -42,23 +48,21 @@ header h1 {
   grid-area: nav-bar;
   display: grid;
   grid-template-columns: 100px 1fr;
-  border: 1px dotted black;
 }
 header p {
   display: grid;
   align-items: center;
   padding-left: 10jpx;
-  border: 1px dotted black;
 }
 header ul {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(9, auto);
   padding: 0;
+  grid-gap: 10px;
 }
 
 header ul li {
-  border: 1px dotted black;
   width: auto;
   display: grid;
   place-items: center;
@@ -66,8 +70,100 @@ header ul li {
   border-radius: 10px;
 }
 
-main,
-footer {
+/* MAIN */
+
+main {
+  display: grid;
+  grid-template-columns: 1fr minmax(50ch, 2fr) 1fr;
+}
+
+main div {
   display: grid;
   border: 1px dotted gray;
+}
+
+article {
+  display: grid;
+  grid-auto-rows: auto;
+}
+
+/* Main Header */
+main article header {
+  display: grid;
+  place-items: center;
+  grid-auto-rows: auto;
+  grid-gap: 20px;
+}
+
+.key-image {
+  width: 100%;
+  height: 200px;
+
+  display: grid;
+  place-content: center;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+main article header,
+section {
+  border: 1px dotted gray;
+}
+
+/* ARTICLE quote list */
+article {
+  display: grid;
+  grid-gap: 10px;
+  line-height: 1.5rem;
+}
+ul {
+  display: grid;
+  list-style: none;
+  grid-gap: 20px;
+  padding: 0;
+}
+.book li {
+  background-color: rgb(198, 212, 238);
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  filter: drop-shadow(5px 5px 5px #b8b8b8);
+}
+
+.movie li {
+  background-color: rgb(198, 238, 198);
+  border-radius: 5px;
+  padding: 10px;
+  filter: drop-shadow(5px 5px 5px #b8b8b8);
+}
+
+.lyrics li {
+  background-color: rgb(238, 198, 226);
+  border-radius: 5px;
+  padding: 10px;
+  filter: drop-shadow(5px 5px 5px #b8b8b8);
+}
+
+.celebrity li {
+  background-color: rgb(238, 203, 198);
+  border-radius: 5px;
+  padding: 10px;
+  display: grid;
+  filter: drop-shadow(5px 5px 5px #b8b8b8);
+}
+figcaption {
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+li p {
+  font-style: italic;
+  text-align: justify;
+}
+
+/* Footer */
+footer {
+  display: grid;
+
+  background-color: black;
 }
