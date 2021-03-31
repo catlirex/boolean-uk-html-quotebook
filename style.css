@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* BODY GRID */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr 150px;
+
+  height: 100vh;
+}
+
+/* HEADER GRID */
+header {
+  display: grid;
+  border: 1px dotted gray;
+  grid-template:
+    "logo . " auto
+    "nav-bar nav-bar" 50px/
+    50px 1fr;
+  padding: 5px;
+  grid-gap: 10px;
+  background-color: #472836;
+  color: white;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+
+  display: grid;
+  border-radius: 50%;
+}
+
+header h1 {
+  display: grid;
+  align-content: center;
+}
+
+.nav-bar {
+  grid-area: nav-bar;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  border: 1px dotted black;
+}
+header p {
+  display: grid;
+  align-items: center;
+  padding-left: 10jpx;
+  border: 1px dotted black;
+}
+header ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(9, auto);
+  padding: 0;
+}
+
+header ul li {
+  border: 1px dotted black;
+  width: auto;
+  display: grid;
+  place-items: center;
+
+  border-radius: 10px;
+}
+
+main,
+footer {
+  display: grid;
+  border: 1px dotted gray;
+}
