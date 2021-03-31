@@ -49,6 +49,7 @@ header h1 {
   display: grid;
   grid-template-columns: 100px 1fr;
 }
+
 header p {
   display: grid;
   align-items: center;
@@ -79,7 +80,6 @@ main {
 
 main div {
   display: grid;
-  border: 1px dotted gray;
 }
 
 article {
@@ -103,11 +103,6 @@ main article header {
   place-content: center;
   object-fit: cover;
   border-radius: 10px;
-}
-
-main article header,
-section {
-  border: 1px dotted gray;
 }
 
 /* ARTICLE quote list */
@@ -161,9 +156,27 @@ li p {
   text-align: justify;
 }
 
+h2 {
+  font-weight: bold;
+  padding-top: 50px;
+}
+
+a {
+  color: inherit;
+}
+
 /* Footer */
 footer {
   display: grid;
 
   background-color: black;
+}
+
+/* alternating colours to the quotes without using additional classes */
+
+.book li:nth-child(odd),
+.movie li:nth-child(odd),
+.lyrics li:nth-child(odd),
+.celebrity li:nth-child(odd) {
+  background-color: rgb(148, 148, 226);
 }
